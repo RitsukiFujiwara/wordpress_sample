@@ -1,22 +1,21 @@
-
-<?php get_header(); ?>
-
-<?php get_template_part('content','menu'); ?>
+<?php get_header();?>
+		<?php get_template_part('content','menu');?>
 
 		<div id="main">
-		<section id="blog_list" class="site-width">
+
+			<!-- blog_list -->
+			<section id="blog_list" class="site-width">
 				<h1 class="title">BLOG</h1>
 				<div id="content" class="article">
 					
-					<?php get_template_part('loop'); ?>
-					<?php if (function_exists("pagination")) pagination($additional_loop->max_num_pages); ?>
+
+				<?php get_template_part('loop');?>
+				<?php if (function_exists("pagination")) pagination($wp_query->max_num_pages); ?>
 				</div>
 				
-			<!-- blog_list -->
-			<?php get_sidebar();?>
-					
+                <?php get_sidebar();?>
 			</section>
 
 
 		</div>
-		<?php get_footer(); ?>
+<?php get_footer();?>
